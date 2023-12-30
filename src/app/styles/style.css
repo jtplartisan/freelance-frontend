@@ -1,10 +1,90 @@
-.page{
-
+.page {
+    background-color:rgb(24, 159, 238) ;
 }
-.nextbtn{
+.nextbtn {
     margin-left: 250px;
 }
-.forming{
-    border: 2px solid pink;
+.login {
+    margin-top: 100px;
+    background-color:rgb(24, 159, 238) ;
+}
+.loginbtn {
+    margin-left: 250px;
+}
+.navbarcss {
+    background-color: black;
+}
+.navlinks {
+    font-size: 20px;
+    font-weight: bold;
+   color: antiquewhite;
+    
+}
+.signinbtn {
+    margin-right: 10px;
+    border: none;
+}
 
+.signupbtn {
+    margin-right: 50px;
+    border: none;
+}
+.logo {
+    font-size: 30px;
+    margin-right: 350px;
+    margin-left: 50px;
+    color: rgb(6, 132, 204);
+    border-radius: 10px;
+}
+.logos{
+    margin-left: 250px;
+}
+.contact{
+    background-color: rgb(214, 215, 216); 
+}
+.contactbtn {
+    margin-left: 250px;
+}
+.main {
+    background-color: rgba(10, 10, 10, 0.4);
+    color: black;
+    height: 600px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+}
+.leftheading {
+    font-weight: bold;
+    font-size: 80px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.slider {
+    margin-left: 50px;
+}
+.content {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
+    height: 200px;
+    padding: 5px;
+    margin-top: 0%;
+    text-align: justify;
+}
+.why{
+    font-size: 50px;
+    color: rgb(6, 132, 204);
+    height: 550px;
+    background-color: black;
+}
+.whycogni{
+    height:400px ;
+    width: 1520px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
+ margin-left: 40px;
+ margin-right: 40px;
+ font-size: 20px;
+ overflow-y: auto;
+ text-align: justify;
 }
