@@ -22,7 +22,7 @@ const onSubmit=(data)=>{
         axios.post("http://localhost:8000/api/v1/auth/signIn",data).then(response=>{
           localStorage.setItem('token' , response?.data?.data?.token)
           if(response.data.data.role == "client"){
-            router.push("../tickets/craete")
+            router.push("../tickets")
           }
           else if(response.data.data.role == "user"){
 router.push("../home")

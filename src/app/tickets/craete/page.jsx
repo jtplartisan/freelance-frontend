@@ -1,13 +1,13 @@
 "use client"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Col } from 'react-bootstrap';
+import { Col ,Table,Card} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from 'axios';
-import { nanoid } from 'nanoid';
+
 
 const schema = yup.object().shape({
     subject: yup.string().required(),
@@ -21,6 +21,7 @@ function Client() {
         resolver: yupResolver(schema),
     });
     const router = useRouter();
+    const[data,setData]=useState([])
 
     const onSubmit = (data) => {
         console.log(data);
@@ -32,13 +33,22 @@ function Client() {
             console.log(response);
         }).catch((error) => {
             console.log(error)
-        });
+        });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
     };
+
+    useEffect(()=>{
+         axios.get("http://127.0.0.1:8000/api/v1/ticket/client/my-tickets/2}",{
+            headers: { Authorization: "Bearer " + localStorage.getItem('token')}
+         }).then(response=>{
+console.log(response.data.data.tickets,"mahi")
+            setData(response.data.data.tickets)
+         })
+    },[])
 
     return (
         <div className='col-md-6 offset-md-3 justify-content-center'>
             <Form className=' p-3 m-5 'onSubmit={handleSubmit(onSubmit)}>
-                <h2 className='text-center'>Create ticket</h2>
+                <h2 className='text-center'>Add ticket</h2>
                 <Form.Group className="mb-3 mt-5 " controlId="formGroupEmail" >
                     <Form.Label className='fw-bold'>Subject</Form.Label>
                     <Form.Control type="text" placeholder="" {...register("subject")} />
@@ -73,6 +83,34 @@ function Client() {
                     />
                 </Col>
             </Form>
+            <hr/>
+            <h2 className='text-center mt-5 mb-4'>Tickets List</h2>
+            <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Ticket_Id</th>
+          <th>First Name</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
+    data.length > 0 ? (
+        data.map((item, i) => (
+          <tr key={i} >
+           <td>{item.id}</td>
+              <td>{item.body}</td>
+              <td>{item.createdAt}</td>
+              <td>{item.updatedAt}</td>       
+       </tr>
+        ))
+      ) : (
+        <p>No data available</p>
+      )}
+      </tbody>
+    </Table>
         </div>
     );
 }

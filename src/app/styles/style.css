@@ -87,3 +87,24 @@
  overflow-y: auto;
  text-align: justify;
 }
+.ticketmenu{
+   height: 750px;
+   background-color: rgb(10, 10, 100); 
+}
+
+.ticketlogo{
+ 
+}
+.ticketmain{
+float: left;
+height: 750px;
+}
+.ticketcards{
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-right: 50px;
+    margin-top: 150px;
+    text-align: center;
+    background-color: rgb(218, 220, 221);
+}
