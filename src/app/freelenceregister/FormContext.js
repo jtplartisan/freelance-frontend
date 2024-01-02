@@ -11,7 +11,7 @@
  };
 
   return (
-    <FormContext.Provider value={{ formData, updateFormData }}>
+    <FormContext.Provider value={{ formData, updateFormData}}>
       {children}
     </FormContext.Provider>
   );

@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import '../styles/style.css'
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -14,10 +15,18 @@ const schema = yup.object().shape({
 
 function  Client() {
 const { register, handleSubmit, formState: { errors }} = useForm({resolver: yupResolver(schema)});
+const router=useRouter()
 
 const onSubmit=(data)=>{
         console.log(data)
         axios.post("http://localhost:8000/api/v1/auth/signIn",data).then(response=>{
+          localStorage.setItem('token' , response?.data?.data?.token)
+          if(response.data.data.role == "client"){
+            router.push("../tickets/craete")
+          }
+          else if(response.data.data.role == "user"){
+router.push("../home")
+          }
           console.log(response.data)
         }).catch(error=>{
           console.log("Network Error",+error)
