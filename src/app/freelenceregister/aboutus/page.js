@@ -7,18 +7,20 @@ import Card from 'react-bootstrap/Card';
  function Aboutus(){
       const[data,setData]=useState([])
       useEffect(() => {
+
         axios
           .get("http://127.0.0.1:8000/api/v1/en/about")
           .then((response) => {
             setData(response.data.data.about);
             console.log(response.data.data.about,'hello')
             
-          })
+          })                                                                                                                             
           .catch((error) => {
-            console.error("Error fetching blog data:", error);
-            setData([]);
+          console.error("Error fetching blog data:", error);
+          setData([]);
           });
-      }, []);
+        },
+      [])
     
 
      return(
@@ -38,7 +40,8 @@ import Card from 'react-bootstrap/Card';
         ))
       ) : (
         <p>No data available</p>
-      )}
+      )
+      }
     </>
   );
 }

@@ -23,7 +23,8 @@ function Client() {
     const router = useRouter();
     const[data,setData]=useState([])
 
-    const onSubmit = (data) => {
+
+     const onSubmit = (data) => {
         console.log(data);
         data.priority_id = parseInt(data.priority_id)
         data.sub_status_id= parseInt(data?.sub_status_id)
@@ -40,7 +41,7 @@ function Client() {
          axios.get("http://127.0.0.1:8000/api/v1/ticket/client/my-tickets/2}",{
             headers: { Authorization: "Bearer " + localStorage.getItem('token')}
          }).then(response=>{
-console.log(response.data.data.tickets,"mahi")
+            console.log(response.data.data.tickets,"mahi")
             setData(response.data.data.tickets)
          })
     },[])

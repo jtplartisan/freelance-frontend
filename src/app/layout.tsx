@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  import { FormProvider } from './clientregister/FormContext/page';
+import { FormProvider } from './clientregister/FormContext/page';
+import { FormFillProvider } from './freelenceregister/FormContext';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,10 +21,11 @@ export default function RootLayout({
   return (
 <html lang="en">
   <FormProvider>
+  <FormFillProvider>
   <body className={inter.className}>
-    <ToastContainer></ToastContainer>
-    {children}
+   {children}
     </body>
+    </FormFillProvider>
   </FormProvider>
   
     </html>

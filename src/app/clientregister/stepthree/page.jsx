@@ -1,25 +1,25 @@
 "use client"
-import { Button, Col, Row } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import '../../styles/style.css';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import  {useRouter}  from 'next/navigation';
-import { useFormContext } from '../FormContext/page';
-import axios from 'axios';
-import {toast} from 'react-toastify'
+ import { Button, Col, Row } from 'react-bootstrap';
+ import Form from 'react-bootstrap/Form';
+ import '../../styles/style.css';
+ import { useForm } from 'react-hook-form';
+ import { yupResolver } from '@hookform/resolvers/yup';
+ import * as yup from 'yup';
+ import  {useRouter}  from 'next/navigation';
+ import { useFormContext } from '../FormContext/page';
+ import axios from 'axios';
+ import {toast} from 'react-toastify'
 
-const schema = yup.object().shape({
-  hear_about_us: yup.string().required('Hear about us is required'),
-  company_name: yup.string().required('Company name is required'),
-  employee_strength: yup.number().required('Employee strength is required').positive().integer(),
-  service_needed: yup.string().required('Service needed is required'),
-  hire_remote: yup.string().required('Hire remote is required'),
-  how_to_meet: yup.string().required('How to meet is required'),
-})
+ const schema = yup.object().shape({
+   hear_about_us: yup.string().required('Hear about us is required'),
+   company_name: yup.string().required('Company name is required'),
+   employee_strength: yup.number().required('Employee strength is required').positive().integer(),
+   service_needed: yup.string().required('Service needed is required'),
+   hire_remote: yup.string().required('Hire remote is required'),
+   how_to_meet: yup.string().required('How to meet is required'),
+ })
 
-function Client() {
+ function Client() {
   const { register, handleSubmit, formState: { errors }} = useForm({
     resolver: yupResolver(schema),
   });
@@ -27,31 +27,31 @@ function Client() {
   const { formData, updateFormData } = useFormContext();
 
   const router=useRouter()
-const onSubmit = (data) => {
-  toast('🦄Successfully Registered!', {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
+  const onSubmit = (data) => {
+  toast('Successfully Registered!', {
+     position: "top-right",
+     autoClose: 3000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+     theme: "light",
     });
-router.push('../../signin')
- const combinedFormData = { ...formData, ...data };
-  updateFormData(combinedFormData);
-  console.log(combinedFormData)
-  const clientdata={
+   router.push('../../signin')
+   const combinedFormData = { ...formData, ...data };
+   updateFormData(combinedFormData);
+   console.log(combinedFormData)
+   const clientdata={
     email: combinedFormData.email,
-    password:combinedFormData.password ,
+    password:combinedFormData.password,
     password_confirmation: combinedFormData.password_confirmation,
-    first_name: combinedFormData.first_name,
-    last_name: combinedFormData.last_name,
-    phone: combinedFormData. phone,
+    first_name:combinedFormData.first_name,
+    last_name:combinedFormData.last_name,
+    phone:combinedFormData.phone,
     country_id:combinedFormData.country_id,
     hear_about_us:combinedFormData.hear_about_us,
-    company_name: combinedFormData.company_name,
+    company_name:combinedFormData.company_name,
     employee_strength: combinedFormData. employee_strength,
     service_needed:combinedFormData.service_needed,
     hire_remote: combinedFormData.hire_remote,
@@ -66,7 +66,6 @@ router.push('../../signin')
   }
   return (
     <div className='col-md-6 offset-md-3 justify-content-center page mt-3'>
-        {/* <pre>{JSON.stringify(formdata)}</pre> */}
       <Form className='forming p-3 m-2' onSubmit={handleSubmit(onSubmit)}>
         <h2 className='text-center'>Signup Your Account</h2>
         <p className='fw-bold f-5 text-center'>Step 3/3</p>

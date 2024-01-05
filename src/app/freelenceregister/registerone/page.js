@@ -3,10 +3,11 @@ import { Button, Col, Row } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
-import { useFormContext } from "../FormContext";
+import { FormContext, useFormContext } from "../FormContext";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
+import { useContext } from 'react';
  const schema = yup.object().shape({
    country_id: yup
     .number()
@@ -28,18 +29,21 @@ import * as yup from "yup";
     resolver: yupResolver(schema),  
   });
 
-  const { updateFormData, formData } = useFormContext();
+  // const { formData, updateFormData } = useFormContext();
+  const { setFormData,formData } =useContext(FormContext);
+
   const onSubmit = (data) => {
-   
     const combinedFormData = { ...formData, ...data };
-    updateFormData(combinedFormData);
+    setFormData(combinedFormData);
     console.log(combinedFormData);
-  };
-  const defaultValues = {
-    country_id: formData.country_id || "",
-    hear_about_us: formData.hear_about_us || "",
-    english_proficiency: formData.english_proficiency || "",
-  };
+
+   
+  }
+  // const defaultValues = {
+  //   country_id: formData.country_id || "",
+  //   hear_about_us: formData.hear_about_us || "",
+  //   english_proficiency: formData.english_proficiency || "",
+  // };
 
 
   return (
