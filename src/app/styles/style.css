@@ -1,15 +1,21 @@
 .page {
-    background-color:rgb(24, 159, 238) ;
+    background-color:rgb(140, 162, 175) ;
+    border-radius: 15px;
+  margin-top: 100px;
 }
 .nextbtn {
     margin-left: 250px;
 }
 .login {
-    margin-top: 100px;
-    background-color:rgb(24, 159, 238) ;
+    margin-top: 150px;
+    background-color:rgb(140, 162, 175) ;
+    
+    border-radius: 15px;
+    height: 400px;
+    padding-top: 50px;
 }
 .loginbtn {
-    margin-left: 250px;
+    margin-left: 150px;
 }
 .navbarcss {
     background-color: black;
@@ -91,10 +97,6 @@
    height: 750px;
    background-color: rgb(10, 10, 100); 
 }
-
-.ticketlogo{
- 
-}
 .ticketmain{
 float: left;
 height: 750px;
@@ -107,4 +109,18 @@ height: 750px;
     margin-top: 150px;
     text-align: center;
     background-color: rgb(218, 220, 221);
+}
+.profile{
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color:rgb(10, 10, 100); 
+    color: aliceblue;
+    margin-top: 50px;
+}
+.profilebtn{
+    margin-left: 300px;
+}
+.aboutus{
+    background-color:rgb(10, 10, 100); 
+    color: aliceblue ;
 }

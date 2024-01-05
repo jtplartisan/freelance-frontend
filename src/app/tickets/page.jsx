@@ -1,25 +1,35 @@
 "use client"
 import React from 'react'
-import { Col, Row, Nav, Card } from 'react-bootstrap'
+import { Col, Row, Nav, Card, Button } from 'react-bootstrap'
 import '../styles/style.css'
-import img from '../styles/cognisaptwo.jpg'
-import Image from 'next/image'
+import { logout } from '../redux/authReducer'
+import { useDispatch } from 'react-redux'
+import { useRouter } from 'next/navigation'
+import Protected from '../Protected/Protected'
 
 export default function page() {
+const dispatch=useDispatch()
+const router=useRouter()
+
+function logginout(){
+  dispatch(logout())
+router.push('../signin')
+}
+
   return (
     <div>
+    <Protected></Protected>
       <Row>
         <Col md={2} className='ticketmenu'>
           <Nav defaultActiveKey="/home" className="flex-column text-light">
             <h3 className='mx-5 my-3'>CogniSap</h3>
             <Nav.Link href="" className='text-light f-5'>Maintenance Services</Nav.Link>
             <Nav.Link href="../tickets/craete" className='text-light f-5'>Ticket Services</Nav.Link>
-            <Nav.Link eventKey="link-2 " className='text-light f-5 '>Profile</Nav.Link>
-            <Nav.Link className='text-light f-5'>
+            <Nav.Link href='../clientprofile' className='text-light f-5 '>Profile</Nav.Link>
+            <Button className='text-light f-5' onClick={ logginout}  >
               Logout
-            </Nav.Link>
+            </Button>
           </Nav>
-
         </Col>
         <Col md={10} className=''>
           <Card className='ticketcards' style={{ marginLeft: "150px"}}>
@@ -47,6 +57,7 @@ export default function page() {
           </Card>
         </Col>
       </Row>
+     
     </div>
   )
 }

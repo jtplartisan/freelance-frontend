@@ -7,7 +7,7 @@ import Right from './home/Right'
 import Why from './home/Why'
 import Sapspecialist from './home/Sapspecialist'
 import { useRouter } from 'next/navigation';
-
+import {store} from './redux/store'
 
 export default function Home() {
   const router=useRouter()
