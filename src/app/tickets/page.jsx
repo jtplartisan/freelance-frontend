@@ -1,9 +1,10 @@
-"use client"
-import React from 'react'
-import { Col, Row, Nav, Card } from 'react-bootstrap'
-import '../styles/style.css'
-import img from '../styles/cognisaptwo.jpg'
-import Image from 'next/image'
+
+"use client";
+import React from 'react';
+import { Col, Row, Nav, Card } from 'react-bootstrap';
+import '../styles/style.css';    
+// import img from '../styles/cognisaptwo.jpg'
+// import Image from 'next/image'
 
 export default function page() {
   return (
@@ -25,8 +26,8 @@ export default function page() {
           <Card className='ticketcards' style={{ marginLeft: "150px"}}>
             <Card.Body>
               <Card.Text>
-              Some quick example text to build on the card title and make up the
-          bulk of the cards content.
+           Some quick example text to build on the card title and make up the
+           bulk of the cards content.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -34,15 +35,16 @@ export default function page() {
             <Card.Body>
               <Card.Text>
               Some quick example text to build on the card title and make up the
-          bulk of the cards content.
+              bulk of the cards content.
               </Card.Text>
             </Card.Body>
           </Card>
           <Card className='ticketcards'>
             <Card.Body>
               <Card.Text>
-                3 Some quick example text to build on the card title and make up the
-          bulk of the cards content.  </Card.Text>
+          3 Some quick example text to build on the card title and make up the
+          bulk of the cards content. 
+           </Card.Text>
             </Card.Body>
           </Card>
         </Col>
