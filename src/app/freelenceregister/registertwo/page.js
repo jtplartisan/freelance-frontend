@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useFormContext } from "../FormContext";
 import axios from "axios";
-
+import { useContext } from 'react';
+import { FormContext } from "../FormContext";
 const validationSchema = Yup.object().shape({
   primary_skills: Yup.string().required("Primary Skills is required"),
   main_reason_for_applying: Yup.string().required(
@@ -24,11 +24,12 @@ function Registertwo() {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-  const { updateFormData, formData } = useFormContext();
+  const { setFormData,formData } =useContext( FormContext );
 
-  const onSubmit = (data) => {
+
+   const onSubmit = (data) => {
     const combinedFormData = { ...formData, ...data };
-    updateFormData(combinedFormData);
+    setFormData(combinedFormData);
 
      console.log(combinedFormData);
       const freelencerdata = {
@@ -41,21 +42,16 @@ function Registertwo() {
       country_id:combinedFormData.country_id,
       hear_about_us:combinedFormData.hear_about_us,
       english_proficiency:combinedFormData.english_proficiency,
-      primary_skills: combinedFormData.primary_skills,
+      primary_skills:combinedFormData.primary_skills,
       main_reason_for_applying: combinedFormData.main_reason_for_applying,
      };
 
-     axios.post(
-        "http://localhost:8000/api/v1/auth/signUpAsFreelancer",
-        freelencerdata
-       )
-       .then((response) => {
-        console.log(response);
-       })
-       .catch((error) => {
-       console.log("Network ERROR", +error);
-       });
-  };
+     axios.post("http://localhost:8000/api/v1/auth/signUpAsFreelancer",freelencerdata).then(response=>{
+      console.log(response)
+    }).catch(error=>{
+      console.log("Network ERROR",+error)
+    })
+    }
   
 
   return (

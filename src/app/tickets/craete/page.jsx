@@ -22,13 +22,13 @@ function Client() {
         resolver: yupResolver(schema),
     });
     const router = useRouter();
-    const [data, setData] = useState([])
+    const[data,setData]=useState([])
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const onSubmit = (data) => {
+     const onSubmit = (data) => {
         console.log(data);
         data.priority_id = parseInt(data.priority_id)
         data.sub_status_id = parseInt(data?.sub_status_id)
@@ -39,14 +39,14 @@ function Client() {
             toast.success("Ticket created successfully")
         }).catch((error) => {
             console.log(error)
-            toast.error("Failed to create ticket")
-        });
-    }
-    useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/v1/ticket/client/my-tickets/2", {
-            headers: { Authorization: "Bearer " + localStorage.getItem('token') }
-        }).then(response => {
-            console.log(response.data.data.tickets, "mahi")
+        });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    };
+
+    useEffect(()=>{
+         axios.get("http://127.0.0.1:8000/api/v1/ticket/client/my-tickets/2}",{
+            headers: { Authorization: "Bearer " + localStorage.getItem('token')}
+         }).then(response=>{
+console.log(response.data.data.tickets,"mahi")
             setData(response.data.data.tickets)
         })
     }, [])
@@ -107,6 +107,8 @@ function Client() {
                 </Modal.Footer>
             </Modal>
             <hr />
+
+            <Button onClick={()=>router.push('../../tickets/craete/Ticketlist.js')}>See Ticket list</Button>
             <h2 className='text-center mt-5 mb-4'>Tickets List</h2>
             <Table striped bordered hover>
                 <thead>

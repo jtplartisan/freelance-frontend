@@ -8,8 +8,9 @@ import '../styles/style.css'
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useSelector,useDispatch } from 'react-redux';
-import {login} from '../redux/authReducer'
-import {toast} from 'react-toastify'
+import {login} from '../redux/authReducer';
+import {toast} from 'react-toastify';
+import ClientServices from '@/services/client.services';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -25,7 +26,9 @@ console.log(auth)
 
 const onSubmit=(data)=>{
         console.log(data)
-        axios.post("http://localhost:8000/api/v1/auth/signIn",data).then(response=>{
+         axios.post("http://localhost:8000/api/v1/auth/signIn",data)
+// ClientServices.signIn(data)
+        .then(response=>{
           dispatch(login(response.data.accessToken))
           localStorage.setItem('token' , response?.data?.data?.token)
           toast.success("Login SuccessFully")
@@ -45,7 +48,7 @@ return (
   <div className='container'>
    
 <Form onSubmit={handleSubmit(onSubmit)}  className='col-md-4 offset-md-4 justify-content-center  fw-bold login px-4 py-0'>
-<h3 className='text-center py-4'><b>Login to your account or register yourself if you don't have an account</b></h3>
+<h3 className='text-center py-4'><b>Login to your account or register yourself if you dont have an account</b></h3>
       <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
        <Form.Control type="email" placeholder="Enter email" {...register("email")} />
         <p className='text-danger'>{errors.email?.message}</p>

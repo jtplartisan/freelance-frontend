@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import {store,persistor} from './redux/store'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { FormFillProvider } from './freelenceregister/FormContext';
 const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata: Metadata = {
@@ -26,10 +27,12 @@ export default function RootLayout({
 <Provider store={store}>
   
   <FormProvider>
+    <FormFillProvider>
   <body className={inter.className}>
     <ToastContainer></ToastContainer>
     {children}
     </body>
+    </FormFillProvider>
   </FormProvider>
  
   </Provider>
