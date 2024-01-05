@@ -9,6 +9,7 @@
  import { useFormContext } from '../FormContext/page';
  import axios from 'axios';
  import {toast} from 'react-toastify'
+import ClientServices from '@/services/client.services'
 
  const schema = yup.object().shape({
    hear_about_us: yup.string().required('Hear about us is required'),
@@ -58,7 +59,9 @@
     how_to_meet:combinedFormData.how_to_meet
   }
   console.log(clientdata,"hello client")
-  axios.post("http://localhost:8000/api/v1/auth/signUpAsClient",clientdata).then(response=>{
+   axios.post("http://localhost:8000/api/v1/auth/signUpAsClient",clientdata)
+  //ClientServices.clientSignup(clientdata)
+  .then(response=>{
     console.log(response)
   }).catch(error=>{
     console.log("Network ERROR",+error)

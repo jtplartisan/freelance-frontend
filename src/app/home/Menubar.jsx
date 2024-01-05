@@ -17,7 +17,7 @@ function Menubar() {
             <Nav.Link href="#home" onClick={()=>router.push('../')} className='text-light'>Home</Nav.Link>
             <Nav.Link href="#blog"  className='text-light' onClick={()=>router.push('../freelenceregister/blog')}>Blog</Nav.Link>
             <Nav.Link onClick={()=>router.push('../contact')} className='text-light' >Contact</Nav.Link>
-            <Nav.Link href="#aboutus" className='text-light'  onClick={()=>router.push('../freelenceregister/aboutus')}>About Us</Nav.Link>
+            <Nav.Link href="#aboutus" className='text-light'  onClick={()=>router.push('../aboutus')}>About Us</Nav.Link>
           </Nav>
           <Button className='signinbtn' onClick={()=>router.push('../signin')}>SignIn</Button>{'               '}
           <Button className='signupbtn' onClick={()=>router.push('../clientregister')}> SignUp</Button>
