@@ -139,3 +139,12 @@ height: 750px;
     background-color: rgb(10, 10, 100); 
     color: antiquewhite;
 }
+.addtkt{
+    background-color: black;
+    color:rgb(250, 96, 39); 
+    font-size: 30px;
+}
+.addtkt:hover{
+    background-color:rgb(250, 96, 39); 
+    color: black;
+}

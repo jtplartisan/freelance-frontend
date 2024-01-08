@@ -9,6 +9,7 @@ import * as yup from "yup";
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify'
+import '../../styles/style.css'
 
 const schema = yup.object().shape({
     subject: yup.string().required(),
@@ -53,7 +54,7 @@ function Client() {
 
     return (
         <div className='col-md-6 offset-md-3 justify-content-center'>
-            <Button variant="primary" onClick={handleShow} style={{ marginLeft: "320px"}} className='mt-5 mb-5 addtkt'>
+            <Button  onClick={handleShow} style={{ marginLeft: "320px"}} className='mt-5 mb-5 addtkt'>
                 Add Ticket
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -90,7 +91,7 @@ function Client() {
                             <Form.Control type="text" placeholder="" {...register("ticket_body")} />
                             <Form.Text className='text-danger'>{errors.ticket_body?.message}</Form.Text>
                         </Form.Group>
-                        <Col md={12} style={{ marginLeft: "200px" }}>
+                        <Col md={12} style={{ marginLeft:"100px"}}>
                             <input
                                 type="submit"
                                 className="nextbtn btn btn-dark"

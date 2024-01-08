@@ -95,7 +95,7 @@ function Client() {
                             <Form.Control type="text" placeholder="" {...register("ticket_body")} />
                             <Form.Text className='text-danger'>{errors.ticket_body?.message}</Form.Text>
                         </Form.Group>
-                        <Col md={12} style={{ marginLeft: "200px" }}>
+                        <Col md={12} style={{ marginLeft: "150px" }}>
                             <input
                                 type="submit"
                                 className="nextbtn btn btn-dark"
@@ -110,9 +110,7 @@ function Client() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        
-         
-        </div>
+                </div>
     );
 }
 export default Client;
