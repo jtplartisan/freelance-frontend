@@ -60,7 +60,6 @@ import ClientServices from '@/services/client.services'
   }
   console.log(clientdata,"hello client")
    axios.post("http://localhost:8000/api/v1/auth/signUpAsClient",clientdata)
-  //ClientServices.clientSignup(clientdata)
   .then(response=>{
     console.log(response)
   }).catch(error=>{

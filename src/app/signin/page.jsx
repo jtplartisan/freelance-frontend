@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { useSelector,useDispatch } from 'react-redux';
 import {login} from '../redux/authReducer';
 import {toast} from 'react-toastify';
-import ClientServices from '@/services/client.services';
+import ClientServices from '@/services/client.services'
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -26,9 +26,7 @@ console.log(auth)
 
 const onSubmit=(data)=>{
         console.log(data)
-         axios.post("http://localhost:8000/api/v1/auth/signIn",data)
-// ClientServices.signIn(data)
-        .then(response=>{
+         axios.post("http://localhost:8000/api/v1/auth/signIn",data) .then(response=>{
           dispatch(login(response.data.accessToken))
           localStorage.setItem('token' , response?.data?.data?.token)
           toast.success("Login SuccessFully")
@@ -44,6 +42,7 @@ router.push("../home")
           console.log("Network Error",+error)
         })
 }
+
 return (
   <div className='container'>
    
