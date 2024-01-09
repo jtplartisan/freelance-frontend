@@ -1,112 +1,135 @@
 .page {
-    background-color:rgb(3, 3, 3) ;
+    background-color: rgb(3, 3, 3);
     border-radius: 15px;
-  margin-top: 80px;
-  color:rgb(255, 129, 83)
+    margin-top: 80px;
+    color: rgb(255, 129, 83)
 }
+
+.menubar {
+    background-color: rgb(195, 196, 197);
+}
+
 .nextbtn {
     margin-left: 250px;
 }
+
 .login {
     margin-top: 150px;
-    background-color:rgb(140, 162, 175) ;  
+    background-color: black;
     border-radius: 15px;
     height: 400px;
     padding-top: 50px;
+    color:rgb(250, 96, 39) ;
 }
+
 .loginbtn {
     margin-left: 150px;
 }
+
 .navbarcss {
     background-color: rgb(247, 245, 245);
 }
+
 .navlinks {
     font-size: 20px;
     font-weight: bold;
+    color: black;
+}
 
-   color: black;
-    }
 .signinbtn {
     margin-right: 10px;
     border: none;
     background-color: black;
-    color:rgb(250, 96, 39)
+    color: rgb(250, 96, 39)
 }
 
 .signupbtn {
-    margin-right: 50px;
+    margin-right: 10px;
     border: none;
     background-color: black;
-    color:rgb(250, 96, 39)
+    color: rgb(250, 96, 39)
 }
+
 .logo {
     font-size: 30px;
     margin-right: 350px;
     margin-left: 50px;
-    color:rgb(250, 96, 39);
+    /* color:rgb(250, 96, 39); */
     border-radius: 10px;
 }
-.logos{
+
+.logos {
     margin-left: 250px;
 }
-.contact{
-    background-color: rgb(214, 215, 216); 
+
+.contact {
+    background-color: rgb(250, 96, 39)
 }
+
 .contactbtn {
     margin-left: 250px;
 }
+
 .main {
     background-color: rgba(233, 230, 230, 0.4);
     color: black;
     height: 600px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 100px;
+    padding-top: 50px
 }
+
 .leftheading {
     font-weight: bold;
     font-size: 80px;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .slider {
-    margin-left:50px;
+    margin-left: 50px;
 }
+
 .content {
     border-radius: 10px;
-    background-color:black;
+    background-color: black;
     color: rgb(250, 96, 39);
     height: 250px;
     padding: 15px;
     margin-top: 0%;
     text-align: justify;
 }
-.why{
+
+.why {
     font-size: 50px;
     color: rgb(250, 96, 39);
-    height: 550px;
+    height: 700px;
     background-color: rgba(189, 184, 184, 0.4);
 }
-.whycogni{
-    height:400px ;
+
+.whycogni {
+    height: 650px;
     width: 1520px;
     border-radius: 10px;
     background-color: whitesmoke;
     color: black;
- margin-left: 40px;
- margin-right: 40px;
- font-size: 20px;
- overflow-y: auto;
- text-align: justify;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    overflow-y: auto;
+    text-align: justify;
 }
-.ticketmenu{
-   height: 750px;
-   background-color: rgb(10, 10, 100); 
+
+.ticketmenu {
+    height: 750px;
+    background-color: rgb(10, 10, 100);
 }
-.ticketmain{
-float: left;
-height: 750px;
+
+.ticketmain {
+    float: left;
+    height: 750px;
 }
-.ticketcards{
+
+.ticketcards {
     width: 300px;
     height: 200px;
     float: left;
@@ -115,36 +138,68 @@ height: 750px;
     text-align: center;
     background-color: rgb(218, 220, 221);
 }
-.profile{
+
+.profile {
     margin-left: 400px;
     margin-right: 400px;
-    background-color:rgb(10, 10, 100); 
+    background-color: rgb(10, 10, 100);
     color: aliceblue;
     margin-top: 50px;
 }
-.profilebtn{
+
+.profilebtn {
     margin-left: 300px;
 }
-.aboutus{
-    background-color:rgb(10, 10, 100); 
-    color: aliceblue ;
+
+.aboutus {
+    background-color: rgb(10, 10, 100);
+    color: aliceblue;
 }
-.ticketdetails{
-    width:500px;
+
+.privacy {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 254, 253);
+}
+
+.conditions {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 254, 253);
+}
+
+.ticketdetails {
+    width: 500px;
     height: 400px;
     margin-top: 100px;
-   margin-left: 550px;
+    margin-left: 550px;
 }
-.details{
-    background-color: rgb(10, 10, 100); 
+
+.details {
+    background-color: rgb(10, 10, 100);
     color: antiquewhite;
 }
-.addtkt{
+
+.addtkt {
     background-color: black;
-    color:rgb(250, 96, 39); 
+    color: rgb(250, 96, 39);
     font-size: 30px;
 }
-.addtkt:hover{
-    background-color:rgb(250, 96, 39); 
+
+.addtkt:hover {
+    background-color: rgb(250, 96, 39);
     color: black;
+}
+
+.updatetkt {
+    margin-top: 60px;
+    background-color: rgb(10, 10, 100);
+    color: aliceblue;
+    padding: 25px;
+}
+.updatebtn{
+   margin-left: 160px;
+   background-color: aliceblue;
+   color: blue;
+   font-weight: bold;
+   margin-top: 30px;
+   height: 50px;
 }

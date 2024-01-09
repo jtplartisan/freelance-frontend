@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client"
 import React,{useEffect,useState} from 'react'
 import { Card ,Button} from 'react-bootstrap'
@@ -11,7 +12,8 @@ export default function page() {
   const router=useRouter()
 
   useEffect(()=>{
-axios.get("http://127.0.0.1:8000/api/v1/client-profile", {
+axios.get("http://127.0.0.1:8000/api/v1/client-profile", 
+{
   headers: { Authorization: "Bearer " + localStorage.getItem('token') }
 }).then(response=>{
 console.log(response.data.data,"client data")

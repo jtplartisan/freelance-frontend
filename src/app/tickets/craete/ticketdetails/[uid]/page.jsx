@@ -11,6 +11,7 @@ export default function Page() {
   console.log({ uid }, "checking uid");
 
   useEffect(() => {
+
     axios
       .get(`http://127.0.0.1:8000/api/v1/ticket/client/get-single-ticket?uid=${uid}`, {
         headers: { Authorization: "Bearer " + localStorage.getItem('token') }
@@ -30,8 +31,8 @@ export default function Page() {
       {details &&
         <Card className='details'>
           <Card.Body>
-            <b>Uid</b>   <Card.Text>{details.uid}</Card.Text>
-            <b>Subject</b>  <Card.Text>{details.subject}</Card.Text>
+            <b>Uid</b><Card.Text>{details.uid}</Card.Text>
+            <b>Subject</b><Card.Text>{details.subject}</Card.Text>
             <b>Body</b>  <Card.Text>{details.body}</Card.Text>
             <b>Assign to </b>  <Card.Text>{details.assignTo}</Card.Text>
             {/* <b>Priority </b>  <Card.Text>{details.priority.name}</Card.Text> */}

@@ -18,8 +18,8 @@ export default function page() {
     }, [])
 
     return (
-        <div className='container'>
-            <h1 className='text-center mt-4 mb-5'>Ticket Status</h1>
+        <div className='container' style={{backgroundColor:"blue",marginTop:"200px",height:"200px"}}>
+            <h1 className='text-center mt-4 mb-5 text-light'>Ticket Status</h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -33,13 +33,11 @@ export default function page() {
                 <tbody>
                     <tr>
                         <td>{status.open_ticket}</td>
-                        <td> {status.in_process_ticket
-                        }  </td>
-                        <td> {status.on_hold_ticket} </td>
+                        <td> {status.in_process_ticket}  </td>
+                        <td> {status.on_hold_ticket}</td>
                         <td> {status.solved_ticket
                         }  </td>
                         <td> {status.not_assigned_ticket
-
                         }</td>
                     </tr>
                 </tbody>

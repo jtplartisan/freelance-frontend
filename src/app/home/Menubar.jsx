@@ -11,8 +11,10 @@ import imge from '../styles/cognisaptwo.jpg'
 function Menubar() {
  const router=useRouter()
   return (
-    <Navbar expand="lg" className='navbarcss'>
-<Navbar.Brand href="#home" className='logo '><Image src={imge} height={70} width={70}/><b>CogniSap</b></Navbar.Brand>
+    <Navbar expand="lg" className='navbarcss ' style={{backgroundColor:"gray"}}>
+<Navbar.Brand href="#home" className='logo '>
+  {/* <Image src={imge} height={70} width={70}/> */}
+  <b>CogniSap</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Nav className="me-auto navlinks" >
             <Nav.Link href="#home" onClick={()=>router.push('../')} className='text-dark'>Home</Nav.Link>
@@ -21,7 +23,8 @@ function Menubar() {
             <Nav.Link href="#aboutus" className='text-dark'  onClick={()=>router.push('../aboutus')}>About Us</Nav.Link>
           </Nav>
           <Button className='signinbtn' onClick={()=>router.push('../signin')}>SignIn</Button>{'               '}
-          <Button className='signupbtn' onClick={()=>router.push('../clientregister')}> SignUp</Button>
+          <Button className='signupbtn' onClick={()=>router.push('../clientregister')}>Client SignUp</Button>
+          <Button className='signupbtn' onClick={()=>router.push('../freelenceregister')}>Freelance Signup</Button>
   </Navbar>
   );
 }
