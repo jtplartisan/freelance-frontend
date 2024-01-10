@@ -1,7 +1,7 @@
 "use client"
 import  {useRouter}  from 'next/navigation';
 import {Col} from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
 import '../styles/style.css'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,13 +9,13 @@ import * as yup from "yup";
 import { useFormContext ,FormProvider} from '../clientregister/FormContext/page'
 import {toast} from 'react-toastify'
 
-const schema = yup.object().shape({
+ const schema = yup.object().shape({
  first_name: yup.string().required(),
  last_name: yup.string().required(),
  phone:yup.string().min(10).max(10),
  country_id:yup.string().required()
 });
-function Client() {
+function Client(){
   const { register, handleSubmit, formState: { errors }} = useForm({
     resolver: yupResolver(schema),
   });

@@ -1,24 +1,24 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Button from 'react-bootstrap/Button';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+  "use client"
+  import React, { useEffect, useState } from "react";
+  import axios from "axios";
+  import Button from 'react-bootstrap/Button';
+  import { toast, ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
-
-function Saptickets() {
-   const [data, setData] = useState();
-
-   useEffect(() => {
+    function Saptickets() {
+    const [data, setData] = useState();
+ 
+    useEffect(() => {
       axios.get("http://127.0.0.1:8000/api/v1/ticket/sap/open-tickets", {
          headers: { Authorization: "Bearer " + localStorage.getItem('token') }
       }).then(response => {
          console.log(response.data);
-         setData(response.data);
+         setData(response.data); 
       }).catch(error => {
-         console.error("API Error:", error);
+        console.error("API Error:", error);
       });
    }, []);
+   
 
    function handleAcceptClick() {
       axios.post("http://127.0.0.1:8000/api/v1/ticket/sap/accept-job", {}, {

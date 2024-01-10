@@ -15,8 +15,8 @@ function Blog() {
         console.log(response.data.data.blog, 'hello');
       })
       .catch((error) => {
-        console.error("Error fetching blog data:", error);
-        setData([]);
+      console.error("Error fetching blog data:", error);
+      setData([]);
       });
   }, []);
 

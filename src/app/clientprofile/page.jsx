@@ -9,8 +9,7 @@ import { CgProfile } from "react-icons/cg";
 export default function page() {
   const[data,setData]=useState([])
   const router=useRouter()
-
-  useEffect(()=>{
+useEffect(()=>{
 axios.get("http://127.0.0.1:8000/api/v1/client-profile", {
   headers: { Authorization: "Bearer " + localStorage.getItem('token') }
 }).then(response=>{

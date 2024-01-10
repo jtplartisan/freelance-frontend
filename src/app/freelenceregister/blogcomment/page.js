@@ -4,20 +4,21 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';  
 import { useForm } from "react-hook-form";
 
-function Blogcomment(){
 
-      const { register, handleSubmit } = useForm();
+ function Blogcomment(){
+    const { register, handleSubmit } = useForm();
       const onSubmit = (data) => {
       axios.post("http://localhost:8000/api/v1/blog-comment/create-comment",data)
-          .then((response) => {
+           .then((response) => {
            alert("Data submitted");
-            console.log(response.data);
+          console.log(response.data);
      });
-      }
-    return (
+ }
+     
+ return (
         <>
           <h1 className='text-center'>
-            Create Blog Comment page
+            Create Blog Comment Page
             </h1>
         <div className='container'>
             <div className='row'>
@@ -31,8 +32,7 @@ function Blogcomment(){
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicComment">
         <Form.Label>Comment</Form.Label>
-        <Form.Control as="textarea" rows={3}  {...register("comment")}
- />
+        <Form.Control as="textarea" rows={3}  {...register("comment")}/>
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit

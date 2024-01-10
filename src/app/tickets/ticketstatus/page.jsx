@@ -14,6 +14,7 @@ export default function page() {
             setStatus(response.data.data)
         }).catch(error => {
             console.log("Network Error", +error)
+          
         })
     }, [])
 

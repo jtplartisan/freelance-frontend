@@ -1,15 +1,19 @@
 "use client"
+
 import Form from 'react-bootstrap/Form';
 import '../styles/style.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-//  import { useFormContext } from './FormContext';
+//import { useFormContext } from './FormContext';
+
 import { FormContext, useFormContext } from './FormContext';
-import Link from 'next/link';
+import Link from 'next/link'; 
+
 import * as yup from 'yup'; 
 import { useContext } from 'react';
 
- const schema = yup.object().shape({
+
+   const schema = yup.object().shape({
     email: yup.string().trim().email('Invalid email address').required('Email is required'),
     password: yup.string().trim().required('Password is required'),
     confirmpassword: yup.string().trim().oneOf([yup.ref('password'), null], 'Passwords must match'),
@@ -29,9 +33,8 @@ const { register, handleSubmit, formState: { errors }, reset } = useForm({
   const onSubmit = (data) => {
 
     setFormData(data);
-
-  }
-  return (
+   }
+   return (
  
     <div className='col-md-6 offset-md-3 justify-content-center '>
  <Form className='forming p-3 m-5' >

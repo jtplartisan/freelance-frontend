@@ -1,13 +1,14 @@
-"use client";
-import { Button, Col, Row } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Link from "next/link";
-import { FormContext, useFormContext } from "../FormContext";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+  "use client";
+  import { Button, Col, Row } from "react-bootstrap";
+  import Form from "react-bootstrap/Form";
+  
+  import { yupResolver } from "@hookform/resolvers/yup";
+  import Link from "next/link";
+  import { FormContext, useFormContext } from "../FormContext";
+  import { useForm } from "react-hook-form"; 
+  import * as yup from "yup";
+  import { useContext } from 'react';
 
-import { useContext } from 'react';
  const schema = yup.object().shape({
    country_id: yup
     .number()
@@ -28,23 +29,13 @@ import { useContext } from 'react';
   } = useForm({
     resolver: yupResolver(schema),  
   });
-
-  // const { formData, updateFormData } = useFormContext();
-  const { setFormData,formData } =useContext(FormContext);
-
-  const onSubmit = (data) => {
+  
+   const { setFormData,formData } =useContext(FormContext);
+   const onSubmit = (data) => {
     const combinedFormData = { ...formData, ...data };
     setFormData(combinedFormData);
     console.log(combinedFormData);
-
-   
   }
-  // const defaultValues = {
-  //   country_id: formData.country_id || "",
-  //   hear_about_us: formData.hear_about_us || "",
-  //   english_proficiency: formData.english_proficiency || "",
-  // };
-
 
   return (
     <div className="col-md-6 offset-md-3 justify-content-center ">

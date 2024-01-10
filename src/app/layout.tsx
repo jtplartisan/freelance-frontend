@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  import { FormProvider } from './clientregister/FormContext/page';
+import 'react-toastify/dist/ReactToastify.css';
+import { FormProvider } from './clientregister/FormContext/page';
 import {store,persistor} from './redux/store'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';

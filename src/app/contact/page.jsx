@@ -35,7 +35,7 @@ function BasicExample() {
       
   return (
     <div className='contactbc'>
-   <div className='container '>
+   <div className='container'>
     <h1 className='text-center mt-2'>Contact Us</h1>
     <hr/>
     <Row>

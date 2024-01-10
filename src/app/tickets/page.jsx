@@ -7,16 +7,16 @@ import { useRouter } from 'next/navigation'
 import Protected from '../Protected/Protected'
 import { useDispatch } from 'react-redux'
 
-export default function page() {
+
+ export default function page() {
   const dispatch = useDispatch()
-const router=useRouter()
+ const router=useRouter()
 
   function logginout() {
     dispatch(logout())
     router.push('../signin')
   }
-
-  return (
+   return (
     <div>
       <Protected></Protected>
       <Row>

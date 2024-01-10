@@ -1,4 +1,5 @@
 "use client"
+
 import Menubar from './home/Menubar';
 import img from './styles/cognisaptwo.jpg'
 import { Card ,Button,Row,Col} from 'react-bootstrap';
