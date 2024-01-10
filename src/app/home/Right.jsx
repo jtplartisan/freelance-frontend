@@ -9,19 +9,19 @@ function Right() {
     return (
         <Carousel fade className='slider' >
             <Carousel.Item>
-                <Image src={some}  height={350} width={600}/>
+                <Image src={some}  height={400} width={650}/>
             
             </Carousel.Item>
             <Carousel.Item>
-                <Image src={so}   height={350} width={600}/>
+                <Image src={so}   height={400} width={650}/>
                 
             </Carousel.Item>
             <Carousel.Item>
-                <Image src={something}  height={350} width={600}/>
+                <Image src={something}  height={400} width={650}/>
                 
             </Carousel.Item>
             <Carousel.Item>
-                <Image src={som}  height={350} width={600}/>
+                <Image src={som}  height={400} width={650}/>
                
             </Carousel.Item>
         </Carousel>

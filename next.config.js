@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         domains: [
          "cognisap.com"],
-      }
+      },
 }
 
 module.exports = nextConfig

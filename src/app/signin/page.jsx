@@ -5,12 +5,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import '../styles/style.css'
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useSelector,useDispatch } from 'react-redux';
 import {login} from '../redux/authReducer';
 import {toast} from 'react-toastify';
-import ClientServices from '@/services/client.services'
+import clientServices from '@/services/client.services';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -26,7 +25,9 @@ console.log(auth)
 
 const onSubmit=(data)=>{
         console.log(data)
-         axios.post("http://localhost:8000/api/v1/auth/signIn",data) .then(response=>{
+        clientServices.signIn(data)
+        //  axios.post("http://localhost:8000/api/v1/auth/signIn",data)
+          .then(response=>{
           dispatch(login(response.data.accessToken))
           localStorage.setItem('token' , response?.data?.data?.token)
           toast.success("Login SuccessFully")
@@ -56,7 +57,7 @@ return (
      <Form.Control type="password" placeholder="Password" {...register("password")} />
         <p className='text-danger'>{errors.password?.message}</p>
       </Form.Group>
-      <Button variant="primary" type="submit" className='loginbtn tbn btn-dark text-light'>
+      <Button variant="primary" type="submit" className='loginbtn '>
        Login
       </Button>
 

@@ -1,15 +1,11 @@
 import axios from "axios";
 
-const ClientServices={
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL|| 'http://127.0.0.1:8000/api/v1'
+
+const clientServices={
+ 
      clientSignup:(data)=>{
-        return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/signUpAsClient`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-    },
-    contact : (data)=>{
-        return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/contact`,data,{
+        return axios.post(`${BASE_URL}/auth/signUpAsClient`,data,{
             headers:{
                 "Content-Type":"application/json"
             }
@@ -23,60 +19,25 @@ const ClientServices={
         })
     },
     signIn: (data)=>{
-        return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/signIn`,data,{
+        return axios.post(`${BASE_URL}/auth/signIn`,data,{
             headers:{
                 "Content-Type":"application/json"
             }
         })
     },
    createTicket : (data)=>{
-        return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/ticket/client/create-ticket`,data,{
+        return axios.post(`${BASE_URL}/ticket/client/create-ticket`,data,{
             headers:{
                 "Content-Type":"application/json"
             }
         })
     },
-  getmyTickets : (data)=>{
-        return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/ticket/client/my-tickets/2`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
+  getsingleticket: ()=>{
+    return axios.get(`${BASE_URL}/ticket/client/get-single-ticket`)
     },
-    policy : (data)=>{
-        return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/en/privacy_policy`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-    },
-    conditions : (data)=>{
-        return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/en/term_condition`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-    },
-    about : (data)=>{
-        return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/en/about`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-    },
-    contact : (data)=>{
-        return axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/contact`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-    },
-    clientprofile : (data)=>{
-        return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/client-profile`,data,{
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
+
+    clientprofile : ()=>{
+        return axios.get(`${BASE_URL}/ticket/client/get-single-ticket`)
     }
 }
-export default ClientServices
+export default clientServices
